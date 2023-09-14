@@ -44,8 +44,104 @@
 // Explore
 
 .explore{
-    padding: 32px;
+    @include section-padding;
     text-align: center;
     background: linear-gradient(0deg, var(--Background, #F6F6F6), white);
+
+    &__title{
+        margin-bottom: 10px;
+    }
+
+    &__text{
+        font-weight: 300;
+        font-size: 18px;
+        margin: 24px;
+    }
+
+    &__btn{
+        @include button(primary);
+    }
 }
 
+// Procedure
+
+.procedure{
+    @include section-padding;
+
+    &__title{
+        margin-left: 20px;
+    }
+
+    &__list{
+        margin-left: 20px;
+        padding: 0;
+        list-style: none;
+        counter-reset: listNumber;
+    }
+    
+    &__step{
+        display: flex;
+        position: relative;
+        padding: 24px;
+        margin: 16px 20px 16px 12px;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+        border-radius: 20px;
+        background-color: #f6f6f6;
+        
+        &::before {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            counter-increment: listNumber 1;
+            content: counter(listNumber) "";
+            background: $color-primary;
+            border-radius: 100px;
+            color: white;
+            height: 24px;
+            width: 24px;
+            position: absolute;
+            left: -12px;
+          }
+    }
+    
+    &__icon {
+        margin-right: 16px;
+        color: #7e7e7e;
+      }
+}
+
+.fa-store{
+    color: $color-primary;
+}
+
+// Restaurants
+
+.restaurants{
+    background-color: #F6F6F6;
+    @include section-padding;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+
+.cards{
+    display: grid;
+    column-gap: 32px;
+    row-gap: 32px;
+    grid-template-columns: repeat(1, 1fr);
+    
+}
+
+.card{
+    border-radius: 15px;
+    background-color: white;
+    text-decoration: none;
+    color: inherit;
+
+    &__img{
+        height: 192px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 16px 16px 0 0 ;
+    }
+}

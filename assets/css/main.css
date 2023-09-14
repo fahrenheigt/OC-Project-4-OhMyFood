@@ -39,7 +39,109 @@
 }
 
 .explore {
-  padding: 32px;
+  padding-top: 32px;
+  padding-bottom: 32px;
   text-align: center;
   background: linear-gradient(0deg, var(--Background, #F6F6F6), white);
+}
+.explore__title {
+  margin-bottom: 10px;
+}
+.explore__text {
+  font-weight: 300;
+  font-size: 18px;
+  margin: 24px;
+}
+.explore__btn {
+  padding: 12px 24px;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 100px;
+  border: 0;
+  color: white;
+  background: var(--Button-Gradient, linear-gradient(193deg, #9356DC -11.44%, #FF79DA 123.93%));
+  cursor: pointer;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  height: 50px;
+}
+.explore__btn:hover {
+  background-color: white;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.explore__btn a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.procedure {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.procedure__title {
+  margin-left: 20px;
+}
+.procedure__list {
+  margin-left: 20px;
+  padding: 0;
+  list-style: none;
+  counter-reset: listNumber;
+}
+.procedure__step {
+  display: flex;
+  position: relative;
+  padding: 24px;
+  margin: 16px 20px 16px 12px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  background-color: #f6f6f6;
+}
+.procedure__step::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  counter-increment: listNumber 1;
+  content: counter(listNumber) "";
+  background: #9356DC;
+  border-radius: 100px;
+  color: white;
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  left: -12px;
+}
+.procedure__icon {
+  margin-right: 16px;
+  color: #7e7e7e;
+}
+
+.fa-store {
+  color: #9356DC;
+}
+
+.restaurants {
+  background-color: #F6F6F6;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.cards {
+  display: grid;
+  column-gap: 32px;
+  row-gap: 32px;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.card {
+  border-radius: 15px;
+  background-color: white;
+  text-decoration: none;
+  color: inherit;
+}
+.card__img {
+  height: 192px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
 }/*# sourceMappingURL=main.css.map */
