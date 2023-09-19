@@ -1,3 +1,5 @@
+// Loader
+
 .loader {
     background-color: rgba(235, 226, 237, 0.8); /* Fond semi-transparent pour assombrir la page */
     width: 100%;
@@ -74,8 +76,9 @@
       opacity: 0;
       display: none;
     }
-  }   
-// Location
+  }
+     
+  // Location
 
 .location{
     display: flex;
