@@ -4,10 +4,12 @@
     }
   
     &__arrow {
+      display:flex;
+      align-items:center;
+      justify-content:center;
       position: absolute;
-      left: 2rem;
-      height: 2rem;
-      width: 2rem;
+      left: 32px;
+      width: 32px;
       top: 50%;
       display:flex;
       align-items:center;

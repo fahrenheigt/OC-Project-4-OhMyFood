@@ -42,7 +42,7 @@
     }
 
     &__btn{
-        @include button(primary);
+        @include button(primary); //primary -> design du bouton de homepage
     }
 }
 
