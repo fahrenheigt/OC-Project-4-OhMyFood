@@ -65,9 +65,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeOut 0.5s linear 1s forwards;
+  flex-direction: column;
+  animation: fadeOut 3s linear forwards;
   z-index: 9999;
   position: fixed;
+  backdrop-filter: blur(1.75px);
 }
 .loader__display {
   width: 200px;
@@ -76,7 +78,7 @@
   display: inline-block;
   position: relative;
   border: 8px solid;
-  border-color: #9356DC #9356DC transparent transparent;
+  border-color: rgba(147, 86, 220, 0.9) rgba(147, 86, 220, 0.9) transparent transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
@@ -90,7 +92,7 @@
   bottom: 0;
   margin: auto;
   border: 8px solid;
-  border-color: transparent transparent #FF79DA #FF79DA;
+  border-color: transparent transparent rgba(255, 121, 218, 0.9) rgba(255, 121, 218, 0.9);
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -103,6 +105,19 @@
   height: 100px;
   border-color: #99E2D0 #99E2D0 transparent transparent;
   animation: rotation 1.5s linear infinite;
+}
+.loader__text {
+  margin-top: 20px;
+  font-size: x-large;
+  font-style: italic;
+  font-weight: 700;
+  background-image: linear-gradient(to right, rgba(147, 86, 220, 0.9) 20%, rgba(255, 121, 218, 0.9) 40%, rgba(255, 121, 218, 0.9) 60%, rgba(147, 86, 220, 0.9) 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  animation: textGradient 1s linear infinite;
 }
 
 @keyframes rotation {
@@ -125,9 +140,17 @@
   0% {
     opacity: 1;
   }
+  95% {
+    opacity: 1;
+  }
   100% {
     opacity: 0;
     display: none;
+  }
+}
+@keyframes textGradient {
+  to {
+    background-position: 200% center;
   }
 }
 .location {
@@ -210,6 +233,7 @@
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
   border-radius: 20px;
   background-color: #f6f6f6;
+  transition: background-color 0.175s linear;
 }
 .procedure__step::before {
   display: flex;
@@ -224,6 +248,14 @@
   width: 24px;
   position: absolute;
   left: -12px;
+  transition: background-color 0.175s linear, color 0.175s linear;
+}
+.procedure__step:hover {
+  background-color: #eeeeee;
+}
+.procedure__step:hover::before {
+  background-color: #99E2D0;
+  color: #353535;
 }
 .procedure__icon {
   margin-right: 16px;

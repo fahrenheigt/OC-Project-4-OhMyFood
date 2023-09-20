@@ -1,3 +1,4 @@
+@use "sass:color";
 // Loader
 
 .loader {
@@ -7,10 +8,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeOut 0.5s linear 1s forwards;
+    flex-direction: column;
+    animation: fadeOut 3s linear forwards;
     z-index: 9999;
     position: fixed;
-  
+    backdrop-filter: blur(1.75px);
+
     &__display {
       width: 200px;
       height: 200px;
@@ -18,7 +21,7 @@
       display: inline-block;
       position: relative;
       border: 8px solid;
-      border-color: $color-primary $color-primary transparent transparent;
+      border-color: color.scale($color-primary, $alpha: -10%) color.scale($color-primary, $alpha: -10%) transparent transparent;
       box-sizing: border-box;
       animation: rotation 1s linear infinite;
   
@@ -33,7 +36,7 @@
             bottom: 0;
             margin: auto;
             border: 8px solid;
-            border-color: transparent transparent $color-secondary $color-secondary;
+            border-color: transparent transparent color.scale($color-secondary, $alpha: -10%) color.scale($color-secondary, $alpha: -10%);
             width: 150px;
             height: 150px;
             border-radius: 50%;
@@ -47,6 +50,19 @@
         border-color: $color-tertiary $color-tertiary transparent transparent;
         animation: rotation 1.5s linear infinite;
         }
+    }
+    &__text{
+      margin-top: 20px;
+      font-size: x-large;
+      font-style: italic;
+      font-weight: 700;
+      background-image: linear-gradient(to right, color.scale($color-primary, $alpha: -10%) 20%, color.scale($color-secondary, $alpha: -10%) 40%, color.scale($color-secondary, $alpha: -10%) 60%, color.scale($color-primary, $alpha: -10%) 80%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; 
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent;
+      animation: textGradient 1s linear infinite;
     }
   }
   
@@ -72,9 +88,18 @@
     0% {
       opacity: 1;
     }
+    95% {
+      opacity: 1;
+    }
     100% {
       opacity: 0;
       display: none;
+    }
+  }
+
+  @keyframes textGradient{
+    to {
+      background-position: 200% center;
     }
   }
      
@@ -150,6 +175,7 @@
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
         border-radius: 20px;
         background-color: #f6f6f6;
+        transition: background-color .175s linear;
         
         &::before {
             display: flex;
@@ -164,7 +190,16 @@
             width: 24px;
             position: absolute;
             left: -12px;
+            transition: background-color .175s linear, color .175s linear;
           }
+
+        &:hover{
+          background-color: #eeeeee;
+          &::before{
+            background-color: $color-tertiary;
+            color: #353535;
+          }
+        }
     }
     
     &__icon {
