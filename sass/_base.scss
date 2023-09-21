@@ -6,6 +6,11 @@
     margin: 0;
 }
 
+#wcenter{
+  max-width: 1440px;
+  margin: auto;
+}
+
 // Mixin
 
 @mixin button($type) {
@@ -53,9 +58,18 @@ $color-tertiary: #99E2D0;
     height: 63px;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 
+    @media (min-width:1024px) {
+      height: 96px;
+    }
+
     &__logo {
         width: 162px;
         height: 63px;
+
+        @media (min-width:1024px) {
+          width: 250px;
+          height: 96px;
+        }
     }
 
 }
@@ -69,6 +83,13 @@ $color-tertiary: #99E2D0;
       display: flex;
       flex-direction: column;
       padding: 16px;
+
+      @media (min-width:1024px) {
+        flex-direction: row-reverse;
+        align-items: flex-end;
+        justify-content: flex-start;
+        padding-top: 50px;
+      }
     }
     
     &__logo {
@@ -77,12 +98,23 @@ $color-tertiary: #99E2D0;
       margin: 0;
       font-size: 19px;
       margin-bottom: 16px;
+
+      @media (min-width:1024px) {
+        margin-bottom: 5px;
+        margin-left: 60px;
+        margin-right: 50px;
+        font-size: 21px;
+      }
     }
   
     &__list {
       list-style: none;
       padding: 0;
       margin: 0;
+      
+      @media (min-width:1024px) {
+        display: inline-block;
+      }
     }
   
     &__listElement {
@@ -94,6 +126,11 @@ $color-tertiary: #99E2D0;
   
       &:last-child {
         margin-bottom: 0;
+      }
+
+      @media (min-width:1024px) {
+        display: inline-block;
+        margin-left: 20px;
       }
     }
     
@@ -108,6 +145,12 @@ $color-tertiary: #99E2D0;
   
       &:hover {
         text-decoration: underline;
+      }
+    }
+
+    &__space {
+      @media (min-width:1024px) {
+        margin-left: 40px;
       }
     }
   

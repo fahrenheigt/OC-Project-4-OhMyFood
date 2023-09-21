@@ -138,6 +138,10 @@
 
     &__title{
         margin-bottom: 10px;
+
+        @media (min-width:1024px) {
+          font-size: 40px;
+        }
     }
 
     &__text{
@@ -155,19 +159,34 @@
 
 .procedure{
     @include section-padding;
-
-    &__title{
-        margin-left: 20px;
+    
+    @media (min-width:1024px) {
+      display: flex;
+      padding-left: 180px;
+      padding-right: 180px;
     }
 
-    &__list{
+    &__title {
+        margin-left: 20px;
+
+        @media (min-width:1024px) {
+          margin-left: 0px;
+        }
+    }
+
+    &__list {
         margin-left: 20px;
         padding: 0;
         list-style: none;
         counter-reset: listNumber;
+
+        @media (min-width:1024px) {
+          display: flex;
+          justify-content: center;
+        }
     }
     
-    &__step{
+    &__step {
         display: flex;
         position: relative;
         padding: 24px;
@@ -176,6 +195,14 @@
         border-radius: 20px;
         background-color: #f6f6f6;
         transition: background-color .175s linear;
+
+        @media (min-width:1024px) {
+          max-width: 280px;
+          margin-left: 0px;
+          margin-right: 40px;
+          font-size: 16px;
+          font-weight: 500;
+        }
         
         &::before {
             display: flex;
@@ -193,9 +220,14 @@
             transition: background-color .175s linear, color .175s linear;
           }
 
-        &:hover{
+        &:hover {
           background-color: #eeeeee;
-          &::before{
+
+          .procedure__icon {
+            color: $color-primary;
+          }
+
+          &::before {
             background-color: $color-tertiary;
             color: #353535;
           }
@@ -205,11 +237,8 @@
     &__icon {
         margin-right: 16px;
         color: #7e7e7e;
+        transition: color .175s linear;
       }
-}
-
-.fa-store{
-    color: $color-primary;
 }
 
 // Restaurants
@@ -220,6 +249,10 @@
     padding-left: 20px;
     padding-right: 20px;
     
+    @media (min-width:1024px) {
+      padding-left: 180px;
+      padding-right: 180px;
+    }
 }
 
 .cards{
@@ -228,15 +261,23 @@
     row-gap: 32px;
     grid-template-columns: repeat(1, 1fr);
     
+    @media (min-width:1024px) {
+      grid-template-columns: repeat(2,1fr);
+      column-gap: 100px;
+    }
 }
 
 .card{
-    border-radius: 15px;
+    border-radius: 16px;
     background-color: white;
     display: block;
     text-decoration: none;
     color: inherit;
     position: relative; //To see card badge
+
+    @media (min-width:1024px) {
+      margin-top: 28px;
+    }
 
     &__img{
         height: 192px;
