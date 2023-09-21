@@ -196,12 +196,16 @@
         background-color: #f6f6f6;
         transition: background-color .175s linear;
 
-        @media (min-width:1024px) {
-          max-width: 280px;
+        @media (min-width:1390px) {
+          width: 270px;
           margin-left: 0px;
           margin-right: 40px;
           font-size: 16px;
           font-weight: 500;
+        }
+
+        @media (max-width:1390px) {
+          width : auto;
         }
         
         &::before {
