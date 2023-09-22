@@ -161,6 +161,7 @@
   font-weight: 700;
   background-image: linear-gradient(to right, rgba(147, 86, 220, 0.9) 20%, rgba(255, 121, 218, 0.9) 40%, rgba(255, 121, 218, 0.9) 60%, rgba(147, 86, 220, 0.9) 80%);
   background-size: 200% auto;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
@@ -624,42 +625,42 @@
 }
 
 .delay-1 {
-  animation-delay: 0.1s;
+  animation-delay: 0.15s;
 }
 
 .delay-2 {
-  animation-delay: 0.2s;
-}
-
-.delay-3 {
   animation-delay: 0.3s;
 }
 
+.delay-3 {
+  animation-delay: 0.45s;
+}
+
 .delay-4 {
-  animation-delay: 0.4s;
-}
-
-.delay-5 {
-  animation-delay: 0.5s;
-}
-
-.delay-6 {
   animation-delay: 0.6s;
 }
 
+.delay-5 {
+  animation-delay: 0.75s;
+}
+
+.delay-6 {
+  animation-delay: 0.9s;
+}
+
 .delay-7 {
-  animation-delay: 0.7s;
+  animation-delay: 1.05s;
 }
 
 .delay-8 {
-  animation-delay: 0.8s;
+  animation-delay: 1.2s;
 }
 
 .wrapBtn {
   display: flex;
   text-decoration: none;
   justify-content: center;
-  padding: 48px 0;
+  padding: 0;
 }
 
 .commandBtn {

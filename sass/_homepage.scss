@@ -58,6 +58,7 @@
       font-weight: 700;
       background-image: linear-gradient(to right, color.scale($color-primary, $alpha: -10%) 20%, color.scale($color-secondary, $alpha: -10%) 40%, color.scale($color-secondary, $alpha: -10%) 60%, color.scale($color-primary, $alpha: -10%) 80%);
       background-size: 200% auto;
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent; 
       -moz-background-clip: text;
