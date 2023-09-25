@@ -41,17 +41,31 @@
   position: relative;
 
   &__header {
+    margin-bottom: 30px;
     padding: 16px 32px 0 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
+    @media (min-width:1024px) {
+    justify-content: center;
+    }
+  }
+
+  &__container{
+    max-width: 1050px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
   }
 
   &__title {
+    margin-top: 31px;
     font-family: "Shrikhand", "cursive";
   }
 
   &__btn {
+    margin-top: 31px;
     height: 32px;
     width: 32px;
     background-color: transparent;
@@ -63,6 +77,10 @@
     cursor: pointer;
     position: relative;
     background-color: black;
+
+    @media (min-width:1024px) {
+    margin-left: 15px;
+    }
   
   
     &:hover::before{
@@ -108,10 +126,12 @@
 
 .submenus {
   display: grid;
+  
 
   @media (min-width:1024px) {
-    grid-template-columns: repeat(3,1fr);
-    column-gap: 16px;
+    width: 634px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -222,7 +242,7 @@
   }
 }
 
-@for $i from 0 to 9 {
+@for $i from 0 to 10 {
   .delay-#{$i} {
     animation-delay:  #{$i*0.15}s;
   }
@@ -230,14 +250,16 @@
 
 // Button
 
-.wrapBtn {
+.menuBtn {
   display: flex;
   text-decoration: none;
   justify-content: center;
-  padding: 0;
+  margin-top: 30px
 }
 
 .commandBtn {
   @include button(primary);
   cursor: pointer;
+  padding-right: 45px;
+  padding-left: 45px;
 }
